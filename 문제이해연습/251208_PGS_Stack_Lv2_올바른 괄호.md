@@ -1,22 +1,37 @@
-# [파일이름]
-> [문제 출처](링크) <br/>
-> **파일 네이밍 규칙**: `YYMMDD_플랫폼_유형_난이도_제목.md`
-> - **플랫폼**: BOJ(백준), PGS(프로그래머스), SEA(삼성SW), LTC(리트코드)
-> - **유형**: Impl(구현), BFS, DFS, Greedy, DP, Stack, Queue, Hash 등
-> - **난이도**: Lv1, G5(골드5), S3(실버3) 등
-> - **예시**: `251205_PGS_Impl_Lv1_유연근무제.md`
+# [251208_PGS_Stack_Lv2_올바른 괄호]
+> [문제 출처](https://school.programmers.co.kr/learn/courses/30/lessons/12909) <br/>
 
 ## 1. 🔍 분석 (10분)
 - **제약 & 복잡도**:
-   - N = [최대값] ➜ **O([목표 복잡도])**
-   - [시간 제한 1초 등 특이사항]
-- **유형 & 자료구조**: [참고 시트에서 선택]
+   - N = 100,000 -> O(N)
+- **유형 & 자료구조**: Stack
 - **핵심 로직 (Key Idea)**: 
    1. [전처리] 
+      - 빈 stack 초기화 
+      - 문자열 s를 인자로 받아서 저장
    2. [메인 로직] (예외/탈출 조건 포함)
+      
+      `<나의 작성>`
+      - for문을 통해 s의 앞부터 순회
+         - stack의 인자가 2개 이상 있고, 마지막 2개의 인자가 (, )라면 
+            - pop 을 2번 실행
+      - 반복문이 종료된 후 stack에 남아있는 요소가 있으면 False, 없으면 true
+      
+      `<성능 최적화> - gemini feedback`
+      - 문자열 s 순회: 
+         - '(' 인 경우 stack에 추가
+         - ')' 인 경우: 
+            - stack이 비어있으면 return False (닫을 괄호 부족)
+            - stack이 비어있지 않으면 pop 실행 (짝 맞춤)
+
    3. [최종 결과] (return 값)
+      - 반복 종료 후 stack이 비어있으면 True, 그렇지 않으면 False
+      
 - **체크 포인트**:
-   - [ ] [참고 시트에서 선택]
+   - [x] N=1 또는 0일 때 (최소 입력) -> 무조건 false
+   - [x] 데이터가 없는 경우 (Empty) -> 무조건 true
+   - [x] 모든 값이 동일한 경우 -> 무조건 true
+   - [x] 정답이 음수이거나 0일 가능성 -> 없음 ;true/false 변환 (boolean)
 
 ---
 
@@ -25,12 +40,23 @@
 
 **① 오늘의 알고리즘/개념**
 > 개념의 핵심 원리 한 줄 요약
-- 내용을 정리합니다.
+- **Stack (스택)**: 괄호 쌍 맞추기처럼 '가장 최근에 열린 것'을 먼저 닫아야 하는 경우 **LIFO(후입선출)** 구조가 필수적.
+- **Early Return**: 불가능한 조건(닫는 괄호인데 스택이 빔)을 만나면 끝까지 보지 않고 즉시 반환하여 효율성 증대.
 
 **② Python Code Snippet (패턴 저장)**
 > 나중에 써먹을 수 있는 핵심 코드 조각
 ```python
-여기에 코드를 작성합니다.
+def solution(s):
+    stack = []
+    for char in s:
+        if char == '(':
+            stack.append(char)
+        else:  # char == ')'
+            if not stack:
+                return False  # 스택이 비었는데 닫는 괄호가 옴 -> 실패
+            stack.pop()       # 짝이 맞으므로 제거
+            
+    return not stack  # 다 돌았는데 스택에 남은게 없으면 True, 있으면 False
 ```
 
 ---
