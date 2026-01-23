@@ -2,11 +2,11 @@
 
 알고리즘 문제 풀이 전, 문제를 깊이 있게 이해하고 분석하는 연습 공간입니다.
 
-## 📊 카테고리별 풀이 현황 (Total: 19)
+## 📊 카테고리별 풀이 현황 (Total: 21)
 
 | 📁 카테고리 | 📝 풀이 수 | 설명 |
 | :--- | :---: | :--- |
-| 01_Impl_Sim | 11 | 구현, 시뮬레이션, 완전탐색 |
+| 01_Impl_Sim | 13 | 구현, 시뮬레이션, 완전탐색 |
 | 02_Stack_Queue_Hash | 7 | 스택, 큐, 해시, 힙 |
 | 03_DFS_BFS | 0 | 깊이/너비 우선 탐색 |
 | 04_Greedy | 0 | 탐욕법 |
@@ -20,6 +20,8 @@
 
 | 날짜 | 카테고리 | 유형 (Tag) | 난이도 | 문제 제목 | 풀이 링크 |
 | :---: | :---: | :---: | :---: | :--- | :---: |
+| 26.01.23 | 01_Impl_Sim | Sim | B2 | 진법 변환 | [View](./01_Impl_Sim/260123_BOJ_Sim_B2_진법_변환.md) |
+| 26.01.23 | 01_Impl_Sim | Sim | B3 | 중앙 이동 알고리즘 | [View](./01_Impl_Sim/260123_BOJ_Sim_B3_중앙_이동_알고리즘.md) |
 | 26.01.18 | 02_Stack_Queue_Hash | Heap | Lv3 | 이중우선순위큐 | [View](./02_Stack_Queue_Hash/260118_PGS_Heap_Lv3_이중우선순위큐.md) |
 | 26.01.18 | 02_Stack_Queue_Hash | Heap | Lv2 | 더 맵게 | [View](./02_Stack_Queue_Hash/260118_PGS_Heap_Lv2_더_맵게.md) |
 | 26.01.08 | 02_Stack_Queue_Hash | Queue | Lv2 | 프로세스 | [View](./02_Stack_Queue_Hash/260108_PGS_Queue_Lv2_프로세스.md) |
