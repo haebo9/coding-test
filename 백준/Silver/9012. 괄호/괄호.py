@@ -1,5 +1,5 @@
-# import sys
-# input = sys.stdin.readline
+import sys
+input = sys.stdin.readline
 
 def check_vps(data:str)->bool:
     stack = []
@@ -17,8 +17,8 @@ def check_vps(data:str)->bool:
         else: # 안비어있으면
             return False
 
-for _ in range(int(input())):
-    user = input()
+for _ in range(int(input().strip())):
+    user = input().strip()
     if check_vps(user):
         print('YES')
     else:
