@@ -2,12 +2,12 @@
 
 알고리즘 문제 풀이 전, 문제를 깊이 있게 이해하고 분석하는 연습 공간입니다.
 
-## 📊 카테고리별 풀이 현황 (Total: 22)
+## 📊 카테고리별 풀이 현황 (Total: 23)
 
 | 📁 카테고리 | 📝 풀이 수 | 설명 |
 | :--- | :---: | :--- |
 | 01_Impl_Sim | 13 | 구현, 시뮬레이션, 완전탐색 |
-| 02_Stack_Queue_Hash | 8 | 스택, 큐, 해시, 힙 |
+| 02_Stack_Queue_Hash | 9 | 스택, 큐, 해시, 힙 |
 | 03_DFS_BFS | 0 | 깊이/너비 우선 탐색 |
 | 04_Greedy | 0 | 탐욕법 |
 | 05_DP | 1 | 동적계획법 |
@@ -20,13 +20,14 @@
 
 | 날짜 | 카테고리 | 유형 (Tag) | 난이도 | 문제 제목 | 풀이 링크 |
 | :---: | :---: | :---: | :---: | :--- | :---: |
+| 26.01.30 | 02_Stack_Queue_Hash | Heap | S3 | N번째 큰 수 | [View](./02_Stack_Queue_Hash/260130_BOJ_Heap_S3_N번째_큰_수.md) |
 | 26.01.28 | 02_Stack_Queue_Hash | Queue | S3 | 큐 스택 | [View](./02_Stack_Queue_Hash/260128_BOJ_Queue_S3_queuestack.md) |
 | 26.01.23 | 01_Impl_Sim | Sim | B2 | 진법 변환 | [View](./01_Impl_Sim/260123_BOJ_Sim_B2_진법_변환.md) |
 | 26.01.23 | 01_Impl_Sim | Sim | B3 | 중앙 이동 알고리즘 | [View](./01_Impl_Sim/260123_BOJ_Sim_B3_중앙_이동_알고리즘.md) |
 | 26.01.18 | 02_Stack_Queue_Hash | Heap | Lv3 | 이중우선순위큐 | [View](./02_Stack_Queue_Hash/260118_PGS_Heap_Lv3_이중우선순위큐.md) |
 | 26.01.18 | 02_Stack_Queue_Hash | Heap | Lv2 | 더 맵게 | [View](./02_Stack_Queue_Hash/260118_PGS_Heap_Lv2_더_맵게.md) |
 | 26.01.08 | 02_Stack_Queue_Hash | Queue | Lv2 | 프로세스 | [View](./02_Stack_Queue_Hash/260108_PGS_Queue_Lv2_프로세스.md) |
-| 26.01.08 | 02_Stack_Queue_Hash | Stack | Lv2 | 올바른 괄호 | [View](./02_Stack_Queue_Hash/260108_PGS_Stack_Lv2_올바른%20괄호.md) |
+| 26.01.08 | 02_Stack_Queue_Hash | Stack | Lv2 | 올바른 괄호 | [View](./02_Stack_Queue_Hash/260108_PGS_Stack_Lv2_올바른_괄호.md) |
 | 25.12.30 | 02_Stack_Queue_Hash | Queue | Lv2 | 기능개발 | [View](./02_Stack_Queue_Hash/251230_PGS_Queue_Lv2_기능개발.md) |
 | 25.12.30 | 02_Stack_Queue_Hash | Stack | Lv1 | 같은 숫자는 싫어 | [View](./02_Stack_Queue_Hash/251230_PGS_Stack_Lv1_같은_숫자는_싫어.md) |
 | 25.12.19 | 01_Impl_Sim | Impl | Lv1 | 동영상 재생기 | [View](./01_Impl_Sim/251219_PGS_Impl_Lv1_동영상_재생기.md) |
