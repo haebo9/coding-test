@@ -20,6 +20,7 @@
 
 | 날짜 | 카테고리 | 유형 (Tag) | 난이도 | 문제 제목 | 풀이 링크 |
 | :---: | :---: | :---: | :---: | :--- | :---: |
+| 26.01.30 | 02_Stack_Queue_Hash | Heap | S3 | N번째 큰 수 | [View](./02_Stack_Queue_Hash/260130_BOJ_Heap_S3_N%EB%B2%88%EC%A7%B8_%ED%81%B0_%EC%88%98.md) |
 | 26.01.28 | 02_Stack_Queue_Hash | Queue | S3 | 큐 스택 | [View](./02_Stack_Queue_Hash/260128_BOJ_Queue_S3_queuestack.md) |
 | 26.01.23 | 01_Impl_Sim | Sim | B2 | 진법 변환 | [View](./01_Impl_Sim/260123_BOJ_Sim_B2_진법_변환.md) |
 | 26.01.23 | 01_Impl_Sim | Sim | B3 | 중앙 이동 알고리즘 | [View](./01_Impl_Sim/260123_BOJ_Sim_B3_중앙_이동_알고리즘.md) |
