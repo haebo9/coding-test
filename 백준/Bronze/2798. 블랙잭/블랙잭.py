@@ -5,6 +5,12 @@ from itertools import combinations
 
 n, m = map(int, input().strip().split())
 cards = list(map(int, input().strip().split()))
+comb = combinations(cards, 3)
 
-comb = sorted([sum(i) for i in combinations(cards, 3) if sum(i) <= m])
-print(comb[-1])
+result = 0
+for i in comb: 
+    temp = sum(i)
+    if temp <= m and temp >= result:
+        result = temp 
+
+print(result)
