@@ -7,10 +7,11 @@
 N = int(input().strip())
 
 result = None
-for i in range(N, 0, -1):
+for i in range(0, N):
     temp = i + sum(map(int, list(str(i))))
 
     if temp == N: 
         result = i
+        break
 
 print(result if result else 0)
