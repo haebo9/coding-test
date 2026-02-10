@@ -4,10 +4,14 @@
 
 생성자가 없는 경우? 어떻게 합쳐도 그 값이 안나옴
 """
-N = int(input().strip())
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+min_n = max(0, N - len(str(N))*9 - 1)
 
 result = None
-for i in range(0, N):
+for i in range(min_n, N):
     temp = i + sum(map(int, list(str(i))))
 
     if temp == N: 
