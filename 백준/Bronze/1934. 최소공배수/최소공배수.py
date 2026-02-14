@@ -1,23 +1,24 @@
-def min_cross(a, b): 
-    if b % a == 0: 
-        return b
+# 최대 공약수
+def get_gcd(a, b): 
+    """
+    유클리드 호제법 : a와 b의 공약수는, b와 (a를 b로 나눈 나머지)의 공약수와 같다. 
     
-    # 두 수를 동시에 나눌 수 있는 수가 있으면 작은 수만 나눔 
-    i = 2
-    temp_b = b
-    while i <= a: 
-        while a % i == 0 and temp_b % i == 0: 
-                a //= i
-                temp_b //= i
-        i += 1
+    나머지를 구해 숫자의 덩치를 줄여나가도 공약수 성질은 변하지 않음. 
+    GCD(12, 8) = GCD(8, 4) = GCD(4, 0)
+    """
+    while b: 
+        a, b = b, a%b
+    return a
 
-    return a*b
+# 최대 공배수
+def get_lcm(a, b): 
+    """ 최대공약수로 a와 b중 하나만 나눠준 뒤 곱한 수 """
+    return a*b // get_gcd(a, b)
 
+# 케이스 입력
 import sys
-input = sys.stdin.readline
+input = sys.stdin.readline 
 
-t = int(input())
-for _ in range(t):
-    d1, d2= map(int, input().strip().split())  
-    a, b= min(d1, d2), max(d1, d2) 
-    print(min_cross(a,b))
+for _ in range(int(input())): 
+    a,b = map(int, input().strip().split())
+    print(get_lcm(a,b))
