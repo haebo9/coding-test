@@ -26,20 +26,18 @@ def backtrack(index, result):
     for f in range(4): # +, -, x, %
         if func[f] > 0: 
             func[f] -= 1
-            saved = result
-            result = cal(result, num[index], f)
             
-            backtrack(index+1, result)
+            # 다음 result 계산을 인자로 바로 넣는 방식을 사용 : 이전의 result 값 보존
+            backtrack(index+1, cal(result, num[index], f)) 
+            
             func[f] += 1
-            result = saved
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
 n = int(input())
 num = list(map(int, input().strip().split()))
 func = list(map(int, input().strip().split())) # +, -, x, %
-saved = int
 
 r_max = float('-inf')
 r_min = float('inf')
