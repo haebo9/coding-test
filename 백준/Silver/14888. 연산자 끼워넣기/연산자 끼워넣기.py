@@ -32,8 +32,8 @@ def backtrack(index, result):
             
             func[f] += 1
 
-# import sys
-# input = sys.stdin.readline
+import sys
+input = sys.stdin.readline
 
 n = int(input())
 num = list(map(int, input().strip().split()))
