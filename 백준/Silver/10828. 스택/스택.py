@@ -19,12 +19,11 @@ def top():
     print(stack[-1] if stack else -1) 
 
 import sys
-input = sys.stdin.readline 
 
 stack = []
 func = {"push":push, "pop":pop, "size":size, "empty":empty, "top":top}
 
-n = int(input().strip())
-for _ in range(n): 
-    f, *x = input().strip().split()
+n = int(sys.stdin.readline())
+for line in sys.stdin: 
+    f, *x = line.strip().split()
     func[f](*x)
