@@ -1,17 +1,16 @@
-# 현재의 값을 선택했을 때, 좌측의 값 중 얻을 수 있는 가장 큰 값을 선택 
-def dp(): 
-
-    dp = [0]*n 
-
-    for i in range(n): 
-        # 자기 자신을 선택하는 것과 이전 값을 포함하는 것 중 이득이 되는 것을 선택)
-        dp[i] = max(arr[i], arr[i] + dp[i-1]) 
-    
-    return max(dp)
-
+# DP
+# 이전의 합 + 자기자신 vs 자기자신 
+# 이전의 합을 가져갈지 말지를 선택
 import sys
-input = sys.stdin.readline 
+input = sys.stdin.readline
 
-n = int(input()) 
-arr = list(map(int, input().strip().split()))
-print(dp())
+n = int(input())
+array = list(map(int, input().strip().split()))
+
+dp = [0]*(n) # i번째 값을 포함했을떄 합의 최댓값
+dp[0] = array[0]
+
+for i in range(1, n): # index
+    dp[i] = max(dp[i-1]+array[i], array[i])
+
+print(max(dp))
