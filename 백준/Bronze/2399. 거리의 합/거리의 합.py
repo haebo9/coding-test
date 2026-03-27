@@ -1,14 +1,18 @@
-from itertools import combinations
 import sys
 input = sys.stdin.readline 
 
 n = int(input())
-lst = list(map(int, input().strip().split()))
-sorted_lst = sorted(lst)
+nums = sorted(map(int, input().strip().split()))
 
-result = [0]*n
-for i in range(n): 
-    tp = sorted_lst[i]
-    result[i] = 2* (tp*(i) - tp*(n-i-1))
+def solution(n, nums): 
+    result = 0
+    if n == 1: 
+        return 0
 
-print(sum(result))
+    for i in range(n): 
+        for j in range(i+1, n): 
+            result += nums[j] - nums[i]
+
+    return result*2
+
+print(solution(n, nums))
