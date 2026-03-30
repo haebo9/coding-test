@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline 
+
 # 가능한 모든 경로로 이동하면서 누적값 확인 
 def backtrack(r, c, path, total): 
     global n, m, arr, result
