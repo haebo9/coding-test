@@ -1,15 +1,22 @@
-from itertools import product
 def solution(word):
     
-    # 사용할 수 있는 알파벳 후보 (빈칸 포함))
-    alp = ['A', 'E', 'I', 'O', 'U']
-    words = []
+    vowels = ['A', 'E', 'I', 'O', 'U']
+    result = [] 
     
-    # 1. 1글자부터 5글자까지 모든 조합 생성
-    for i in range(1, 6):
-        for p in product(alp, repeat=i):
-            # p는 ('A', 'E') 같은 튜플 형태이므로 문자열로 합쳐줌
-            words.append("".join(p))
+    def backtrack(curr_word): 
+        # 길이 5 넘어가면 종료 
+        if len(curr_word) > 5: 
+            return 
+        
+        # 단어가 생길 때 마다 결과에 저장 
+        if curr_word: 
+            result.append(curr_word)
+        
+        # 모음에 대해 현재 단어에 하나씩 추가하는 로직(백트랙킹)
+        for v in vowels: 
+            backtrack(curr_word + v)
     
-    sorted_word = sorted(words)
-    return sorted_word.index(word)+1
+    # 공백을 시작으로 백트랙킹 탐색 시작 
+    backtrack(curr_word='')    
+    result = sorted(result) # 사전순 정렬 
+    return (result.index(word) + 1) # 찾는 값이 몇번쨰인지 확인 (index +1)
