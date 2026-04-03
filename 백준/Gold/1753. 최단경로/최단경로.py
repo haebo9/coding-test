@@ -14,6 +14,11 @@ def dijkstra(V, K, edges):
         # 누적 거리 합이 가장 짧은 노드 꺼내기 (특정 노드 까지의 최단 거리임을 보장)
         d, u = heapq.heappop(q)
 
+        # 기존의 작으면 무시 : 이미 확정된 경로
+        if dist[u] < d: 
+            continue
+        
+        # 연결된 다음 노드 탐색 
         for v, w in edges[u]: 
             new_d = d + w # u -> v의 누적 가중치 
             # v의 최단 경로보다 작은 경우 갱신 + 큐에 추가
