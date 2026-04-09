@@ -20,16 +20,18 @@ def bfs(n, k):
 
         if x == k: # 목적지 도착 
             return w-1 # 시작 시간 1 -> 0으로 값 보정 
+
+        # 이미 처리된 노드라면 스킵 (핵심 최적화)
+        if visited[x] < w:
+            continue
         
         for mv in [x*2]: 
-            if 0<= mv <= 100000:
-                if w < visited[mv]: 
-                    heapq.heappush(q, (w, mv))
+            if 0<= mv <= 100000 and w < visited[mv]:
+                heapq.heappush(q, (w, mv))
 
         for mv in [x-1, x+1]: 
-            if 0<= mv <= 100000:
-                if w+1 < visited[mv]: 
-                    heapq.heappush(q, (w+1, mv))
+            if 0<= mv <= 100000 and w+1 < visited[mv]:
+                heapq.heappush(q, (w+1, mv))
 
 n, k = map(int, input().split())
 print(bfs(n, k))
