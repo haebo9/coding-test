@@ -12,23 +12,23 @@ def bfs(n, k):
     q = [] 
     heapq.heappush(q, (1, n)) # (w, n): w는 진행된 시간, n은 현재 위치
     
-    visited = [0]*100001
+    visited = [float('inf')]*100001 # 방문 처리 
 
     while q: 
         w, x= heapq.heappop(q) # x에서의 최단시간
+        visited[x] = w 
 
-        if not visited[x] or w < visited[x]:  
-            visited[x] = w 
-
-            if x == k: # 목적지 도착 
-                return w-1 # 시작 시간 1 -> 0으로 값 보정 
-            
-            for mv in [x*2]: 
-                if 0<= mv <= 100000:
+        if x == k: # 목적지 도착 
+            return w-1 # 시작 시간 1 -> 0으로 값 보정 
+        
+        for mv in [x*2]: 
+            if 0<= mv <= 100000:
+                if w < visited[mv]: 
                     heapq.heappush(q, (w, mv))
 
-            for mv in [x-1, x+1]: 
-                if 0<= mv <= 100000:
+        for mv in [x-1, x+1]: 
+            if 0<= mv <= 100000:
+                if w+1 < visited[mv]: 
                     heapq.heappush(q, (w+1, mv))
 
 n, k = map(int, input().split())
