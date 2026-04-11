@@ -1,10 +1,5 @@
-def binomial(n, k): 
-    if k == n or k == 0: 
-        return 1
-    if k == 1: 
-        return n
+import math
+n, k = map(int, input().split())
 
-    return binomial(n-1, k) + binomial(n-1, k-1)
-
-n, k = map(int, input().strip().split())
-print(binomial(n, k))
+result = math.factorial(n) // (math.factorial(n-k) * math.factorial(k))
+print(result)
