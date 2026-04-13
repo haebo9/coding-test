@@ -1,19 +1,21 @@
-def dp():
-    # i번째 까지의 부분수열의 최댓값 = i번으로 올 수 있는 값의 최댓값 + 1(자기 자신) 
-    # i번으로 갈수 있는 i-k 번쨰의 값의 후보는 커질수만 있다. (작아지면 이미 포함됨)
-    memo = [1]*(N)
-
-    for i in range(1, N): 
-        for j in range(i): 
-            if array[j] < array[i]: 
-                memo[i] = max(memo[i], memo[j] +1)
-
-    return max(memo)
-
 import sys
 input = sys.stdin.readline 
 
-N = int(input())
-array = list(map(int, input().strip().split()))
+n = int(input())
+arr = list(map(int, input().strip().split()))
 
-print(dp())
+def solution(n, arr): 
+    "dp의 모든 값은 자신의 좌측에서 수열 값이 작은 것 중에서 누적된 부분 수열 길이가 가장 긴 것에 1을 더한 값이다."
+    result = 0
+    dp = [0]*n
+    for i in range(0, n): # 1~i
+        for j in range(0, i): # 0~i-1
+            if arr[j] < arr[i] and dp[i] < dp[j]: 
+                dp[i] = dp[j]
+        dp[i] += 1
+        if dp[i] > result: 
+            result = dp[i]
+    
+    return result
+
+print(solution(n, arr))
